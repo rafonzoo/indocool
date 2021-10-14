@@ -24,7 +24,7 @@ main {
         max-width: 670px;
       }
 
-      @include breakpoint('xl') {
+      @include breakpoint('lg') {
         margin: 70px auto 0;
         max-width: 800px;
       }
@@ -41,13 +41,13 @@ main {
     margin: 0;
 
     @include breakpoint('md') {
-      font-size: 64px;
+      font-size: 70px;
       font-weight: 800;
       line-height: 0.875;
     }
 
-    @include breakpoint('xl') {
-      font-size: 140px;
+    @include breakpoint('lg') {
+      font-size: 100px;
       font-weight: 800;
       line-height: 0.875;
       min-width: 1090px;
@@ -110,7 +110,7 @@ main {
       line-height: 53px;
     }
 
-    @include breakpoint('xl') {
+    @include breakpoint('lg') {
       font-size: 64px;
       font-weight: 700;
       letter-spacing: -0.021em;
@@ -136,21 +136,19 @@ main {
       max-width: 532px;
     }
 
-    @include breakpoint('xl') {
+    @include breakpoint('lg') {
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -0.032em;
-      line-height: 31px;
-      max-width: 632px;
-      margin-top: 0;
+      line-height: 32px;
+      // max-width: 632px;
+      max-width: 800px;
+      margin-top: 1rem;
     }
-  }
 
-  &-title,
-  &-subtitle,
-  &-list_item {
-    .will-change & {
-      will-change: transform, opacity;
+    // stylelint-disable-next-line
+    > span {
+      display: block;
     }
   }
 
@@ -163,12 +161,25 @@ main {
 
     @include breakpoint('md') {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 8px;
       margin-right: 8px;
+    }
+
+    @include breakpoint('lg') {
+      margin-top: 1rem;
+      margin-right: 1rem;
     }
 
     + a {
       margin-top: 8px;
+    }
+  }
+
+  &-title,
+  &-subtitle,
+  &-list_item {
+    .will-change & {
+      will-change: transform, opacity;
     }
   }
 }

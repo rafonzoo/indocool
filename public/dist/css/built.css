@@ -425,7 +425,7 @@ main {
     max-width: 670px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
   .hero-wrapper.safearea {
     margin: 70px auto 0;
     max-width: 800px;
@@ -447,14 +447,14 @@ main {
 }
 @media only screen and (min-width: 768px) {
   .hero-title {
-    font-size: 64px;
+    font-size: 70px;
     font-weight: 800;
     line-height: 0.875;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
   .hero-title {
-    font-size: 140px;
+    font-size: 100px;
     font-weight: 800;
     line-height: 0.875;
     min-width: 1090px;
@@ -514,7 +514,7 @@ main {
     line-height: 53px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
   .hero-list_item {
     font-size: 64px;
     font-weight: 700;
@@ -542,18 +542,18 @@ main {
     max-width: 532px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
   .hero-subtitle {
     font-size: 24px;
     font-weight: 500;
     letter-spacing: -0.032em;
-    line-height: 31px;
-    max-width: 632px;
-    margin-top: 0;
+    line-height: 32px;
+    max-width: 800px;
+    margin-top: 1rem;
   }
 }
-.will-change .hero-title, .will-change .hero-subtitle, .will-change .hero-list_item {
-  will-change: transform, opacity;
+.hero-subtitle > span {
+  display: block;
 }
 .hero-cta {
   display: block;
@@ -565,12 +565,21 @@ main {
 @media only screen and (min-width: 768px) {
   .hero-cta {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: 8px;
     margin-right: 8px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hero-cta {
+    margin-top: 1rem;
+    margin-right: 1rem;
   }
 }
 .hero-cta + a {
   margin-top: 8px;
+}
+.will-change .hero-title, .will-change .hero-subtitle, .will-change .hero-list_item {
+  will-change: transform, opacity;
 }
 
 /*# sourceMappingURL=built.css.map*/
