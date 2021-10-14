@@ -7394,6 +7394,33 @@ var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _defineProperty; }
+/* harmony export */ });
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
 /***/ })
 
 /******/ 	});
@@ -7459,23 +7486,37 @@ var __webpack_exports__ = {};
   !*** ./src/js/built.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"]); // ScrollTrigger.saveStyles('.hero, .hero-subtitle');
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
-gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"].matchMedia({
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"]);
+var option = {
+  markers: false,
+  trigger: '.hero',
+  pin: true,
+  start: 'top top',
+  end: '+=5000',
+  scrub: true,
+  onLeave: function onLeave() {
+    document.querySelector('.hero-wrapper').classList.remove('will-change');
+  },
+  onEnterBack: function onEnterBack() {
+    document.querySelector('.hero-wrapper').classList.add('will-change');
+  }
+}; // ScrollTrigger.saveStyles('.hero, .hero-subtitle');
+
+gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"].matchMedia({
   '(min-width: 1200px)': function minWidth1200px() {
-    var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
-      scrollTrigger: {
-        markers: false,
-        trigger: '.hero',
-        pin: true,
-        start: 'top top',
-        end: '+=5000',
-        scrub: true
-      }
+    var tl = gsap__WEBPACK_IMPORTED_MODULE_1__["default"].timeline({
+      scrollTrigger: option
     });
     tl.to('.hero-title', {
       autoAlpha: 1,
@@ -7496,12 +7537,12 @@ gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"].matchMedia({
         duration: 1
       });
       tl.to(item, {
-        y: -90,
+        y: -60,
         duration: 5
       });
       tl.to(item, {
         autoAlpha: 0,
-        y: -120,
+        y: -90,
         duration: 1
       });
     });
@@ -7541,15 +7582,8 @@ gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"].matchMedia({
     }, '-=.75');
   },
   '(max-width: 1199px)': function maxWidth1199px() {
-    var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
-      scrollTrigger: {
-        markers: true,
-        trigger: '.hero',
-        pin: true,
-        start: 'top top',
-        end: '+=5000',
-        scrub: true
-      }
+    var tl = gsap__WEBPACK_IMPORTED_MODULE_1__["default"].timeline({
+      scrollTrigger: _objectSpread({}, option)
     });
     tl.to('.hero-title', {
       autoAlpha: 1,

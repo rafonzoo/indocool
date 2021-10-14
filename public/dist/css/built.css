@@ -416,6 +416,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   margin: 120px auto 0;
+  max-width: 370px;
   width: 100%;
 }
 @media only screen and (min-width: 768px) {
@@ -479,9 +480,6 @@ main {
     letter-spacing: -0.04em;
   }
 }
-.hero-title, .hero-subtitle, .hero-list_item {
-  will-change: transform, opacity;
-}
 .hero-list, .hero-list_item {
   width: 100%;
   margin: 0 auto;
@@ -491,7 +489,12 @@ main {
   list-style: none;
   padding: 0;
   height: 100%;
-  top: 30px;
+  top: 60px;
+}
+@media only screen and (min-width: 768px) {
+  .hero-list {
+    top: 30px;
+  }
 }
 .hero-list_item {
   font-size: 40px;
@@ -548,6 +551,9 @@ main {
     max-width: 632px;
     margin-top: 0;
   }
+}
+.will-change .hero-title, .will-change .hero-subtitle, .will-change .hero-list_item {
+  will-change: transform, opacity;
 }
 .hero-cta {
   display: block;

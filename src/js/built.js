@@ -3,19 +3,29 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const option = {
+  markers : false,
+  trigger : '.hero',
+  pin     : true,
+  start   : 'top top',
+  end     : '+=5000',
+  scrub   : true,
+  onLeave : function() {
+    document
+      .querySelector('.hero-wrapper')
+      .classList.remove('will-change');
+  },
+  onEnterBack: function() {
+    document
+      .querySelector('.hero-wrapper')
+      .classList.add('will-change');
+  }
+};
+
 // ScrollTrigger.saveStyles('.hero, .hero-subtitle');
 ScrollTrigger.matchMedia({
   '(min-width: 1200px)': function() {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        markers : false,
-        trigger : '.hero',
-        pin     : true,
-        start   : 'top top',
-        end     : '+=5000',
-        scrub   : true,
-      }
-    });
+    const tl = gsap.timeline({ scrollTrigger: option });
 
     tl.to('.hero-title', { autoAlpha: 1, duration: 2 });
     tl.to('.hero-title', { scale: .8, duration: 2 });
@@ -23,8 +33,8 @@ ScrollTrigger.matchMedia({
 
     [].slice.call(document.querySelectorAll('.hero-list_item')).forEach((item) => {
       tl.to(item, { autoAlpha: 1, y: 0, duration: 1 });
-      tl.to(item, { y: -90, duration: 5 });
-      tl.to(item, { autoAlpha: 0, y: -120, duration: 1 });
+      tl.to(item, { y: -60, duration: 5 });
+      tl.to(item, { autoAlpha: 0, y: -90, duration: 1 });
     });
 
     tl.to('.hero-title', { scale: 1.5, autoAlpha: 1, duration: 1 });
@@ -37,16 +47,7 @@ ScrollTrigger.matchMedia({
   },
 
   '(max-width: 1199px)': function() {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        markers : true,
-        trigger : '.hero',
-        pin     : true,
-        start   : 'top top',
-        end     : '+=5000',
-        scrub   : true,
-      }
-    });
+    const tl = gsap.timeline({ scrollTrigger: { ...option, }, });
 
     tl.to('.hero-title', { autoAlpha: 1, duration: 2 });
     tl.to('.hero-title', { scale: 1.25, duration: 2 });

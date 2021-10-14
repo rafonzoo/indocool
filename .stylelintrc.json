@@ -3,7 +3,8 @@
   "extends": "stylelint-config-standard",
   "ignoreFiles": [
     "public/**/*.css",
-    "src/scss/base/_global.scss"
+    "src/scss/base/_global.scss",
+    "node_modules"
   ],
   "rules": {
     "at-rule-no-unknown": null,
