@@ -7463,14 +7463,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
-var dev = window.location.hostname === 'localhost';
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"]); // ScrollTrigger.saveStyles('.hero, .hero-subtitle');
 
 gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"].matchMedia({
   '(min-width: 1200px)': function minWidth1200px() {
     var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
       scrollTrigger: {
-        markers: dev ? true : false,
+        markers: false,
         trigger: '.hero',
         pin: true,
         start: 'top top',

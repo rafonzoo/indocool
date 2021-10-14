@@ -1,8 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-const dev = window.location.hostname === 'localhost';
-
 gsap.registerPlugin(ScrollTrigger);
 
 // ScrollTrigger.saveStyles('.hero, .hero-subtitle');
@@ -10,7 +8,7 @@ ScrollTrigger.matchMedia({
   '(min-width: 1200px)': function() {
     const tl = gsap.timeline({
       scrollTrigger: {
-        markers : dev ? true : false,
+        markers : false,
         trigger : '.hero',
         pin     : true,
         start   : 'top top',
