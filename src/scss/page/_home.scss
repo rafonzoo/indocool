@@ -16,7 +16,7 @@ main {
     align-items: center;
     margin: 120px auto 0;
     max-width: 370px;
-    width: 100%;
+    width: 87.2%;
 
     &.safearea {
       @include breakpoint('md') {

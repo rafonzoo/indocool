@@ -7511,8 +7511,7 @@ var option = {
   onEnterBack: function onEnterBack() {
     document.querySelector('.hero-wrapper').classList.add('will-change');
   }
-}; // ScrollTrigger.saveStyles('.hero, .hero-subtitle');
-
+};
 gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"].matchMedia({
   '(min-width: 1200px)': function minWidth1200px() {
     var tl = gsap__WEBPACK_IMPORTED_MODULE_1__["default"].timeline({

@@ -22,7 +22,6 @@ const option = {
   }
 };
 
-// ScrollTrigger.saveStyles('.hero, .hero-subtitle');
 ScrollTrigger.matchMedia({
   '(min-width: 1200px)': function() {
     const tl = gsap.timeline({ scrollTrigger: option });
