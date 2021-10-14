@@ -1,0 +1,167 @@
+
+main {
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 120px auto 0;
+    width: 100%;
+
+    &.safearea {
+      @include breakpoint('md') {
+        margin: 0 auto 0;
+        max-width: 670px;
+      }
+
+      @include breakpoint('xl') {
+        margin: 70px auto 0;
+        max-width: 800px;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 90px;
+    font-weight: 800;
+    line-height: 0.875;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+
+    @include breakpoint('md') {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 0.875;
+    }
+
+    @include breakpoint('xl') {
+      font-size: 140px;
+      font-weight: 800;
+      line-height: 0.875;
+      min-width: 1090px;
+    }
+  }
+
+  &-title > span {
+    display: block;
+    letter-spacing: 0;
+
+    @include breakpoint('md') {
+      display: inline-block;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  &-title > span + span {
+    @include breakpoint('md', 'max') {
+      letter-spacing: -0.08em;
+    }
+
+    + span {
+      @include breakpoint('md', 'max') {
+        letter-spacing: -0.04em;
+      }
+    }
+  }
+
+  &-title,
+  &-subtitle,
+  &-list_item {
+    will-change: transform, opacity;
+  }
+
+  &-list,
+  &-list_item {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &-list {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    top: 30px;
+  }
+
+  &-list_item {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.021em;
+    line-height: 43px;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(30px);
+
+    @include breakpoint('md') {
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: -0.021em;
+      line-height: 53px;
+    }
+
+    @include breakpoint('xl') {
+      font-size: 64px;
+      font-weight: 700;
+      letter-spacing: -0.021em;
+      line-height: 67px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.013em;
+    line-height: 25px;
+    color: #333;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(30px);
+
+    @include breakpoint('md') {
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: -0.032em;
+      line-height: 29px;
+      max-width: 532px;
+    }
+
+    @include breakpoint('xl') {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.032em;
+      line-height: 31px;
+      max-width: 632px;
+      margin-top: 0;
+    }
+  }
+
+  &-cta {
+    display: block;
+    font-weight: 500;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #0d6efd;
+
+    @include breakpoint('md') {
+      display: inline-block;
+      margin-top: 1rem;
+      margin-right: 8px;
+    }
+
+    + a {
+      margin-top: 8px;
+    }
+  }
+}

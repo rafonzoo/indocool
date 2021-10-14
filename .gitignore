@@ -1,0 +1,9 @@
+# Ignore WPCS
+wpcs
+
+# Dependencies
+node_modules
+vendor
+
+# Workspace
+.vscode

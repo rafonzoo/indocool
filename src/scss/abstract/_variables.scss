@@ -1,0 +1,36 @@
+$point: (
+  "xs": 360,
+  "sm": 576,
+  "md": 768,
+  "lg": 992,
+  "xl": 1200,
+  "xxl": 1367,
+) !default;
+
+@mixin breakpoint($points, $to: "min", $retina: "false") {
+  @if $retina == "false" {
+    @if $to == "max" {
+      @media only screen and (max-width: #{(map-get($point, $points) - 1) + "px"}) {
+        @content;
+      }
+    }
+
+    @else {
+      @media only screen and (#{$to}-width: #{map-get($point, $points) + "px"}) {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @media
+      only screen and (-webkit-min-device-pixel-ratio: 1.5) and (#{$to}-width: #{map-get($point,
+      $points) + "px"}),
+      only screen and (#{$to}-width: #{map-get($point,
+      $points) + "px"}) and (min-resolution: 1.5dppx),
+      only screen and (#{$to}-width: #{map-get($point,
+      $points) + "px"}) and (min-resolution: 144dpi) {
+      @content;
+    }
+  }
+}
