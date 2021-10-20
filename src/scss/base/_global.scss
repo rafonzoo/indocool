@@ -391,3 +391,9 @@ template {
   margin-right: auto;
   margin-left: auto;
 }
+
+section::before,
+section::after {
+  content: ' ';
+  display: table;
+}
