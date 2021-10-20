@@ -247,11 +247,9 @@ main {
         top: 0;
         left: 0;
         animation: infinite-scroll 8s  linear infinite;
-        transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
 
         @include breakpoint('lg') {
-          animation: infinite-scroll 10s  linear infinite;
+          animation: infinite-scroll 15s  linear infinite;
         }
 
         .will-change & {
@@ -267,6 +265,7 @@ main {
         height: inherit;
         padding: 8px;
         display: inline-block;
+        transform: translateZ(0);
 
         @include breakpoint('md') {
           $rate-height: 420;

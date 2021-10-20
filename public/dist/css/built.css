@@ -679,14 +679,11 @@ main {
   left: 0;
   -webkit-animation: infinite-scroll 8s linear infinite;
           animation: infinite-scroll 8s linear infinite;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
 }
 @media only screen and (min-width: 992px) {
   .board__ratings-list {
-    -webkit-animation: infinite-scroll 10s linear infinite;
-            animation: infinite-scroll 10s linear infinite;
+    -webkit-animation: infinite-scroll 15s linear infinite;
+            animation: infinite-scroll 15s linear infinite;
   }
 }
 .will-change .board__ratings-list {
@@ -701,6 +698,8 @@ main {
   height: inherit;
   padding: 8px;
   display: inline-block;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 @media only screen and (min-width: 768px) {
   .board__ratings-item {
